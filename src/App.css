@@ -1,7 +1,54 @@
 
 
+.App {
+   padding-top: 90px;
+   padding-bottom: 80px;
+}
+
 .dock {
   position: fixed;
   bottom: 0px;
 }
 
+.pageTitle {
+  text-transform: uppercase;
+  display: flex;
+  justify-content: flex-end;
+  letter-spacing: 5px;
+  font-weight: bold;
+  color: #01f8c0;
+  font-size: 2rem;
+  width: 100%;
+  height: 50px;
+  margin-bottom: 15px;
+}
+
+.pageTitle::after {
+  content: '';
+  position: absolute;
+  top: 135px;
+  width: 35%;
+  border-bottom: 2px solid var(--green);
+  transition: 0.4s;
+}
+
+@media (max-width: 700px) {
+  .App {
+    padding-top: 140px;
+  }
+
+  .pageTitle {
+    font-size: 1.5rem;
+  }
+
+  .pageTitle::after {
+    top: 185px;
+    width: 50%;
+  }
+}
+
+@media (min-width: 1600px) {
+  .pageTitle::after {
+    width: 575px;
+  }
+}

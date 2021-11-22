@@ -1,0 +1,89 @@
+:root {
+  --green: #01ffc8;
+  --darkgrey: rgb(39, 39, 39);
+  --activecol: rgb(2, 2, 2);
+  --faded: rgba(2,2,2,.5);
+  --common-font: 'Montserrat';
+  --bg-main: #181818
+}
+
+/* Card */
+
+.item-card {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  padding: 0px 0px 20px 0px;
+  margin: 10px 7px;
+  background-color: var(--darkgrey);
+  position: relative;
+  font-family: var(--common-font), sans-serif;
+  transition: 0.2s;
+
+}
+
+.item-card:hover {
+  background-color: var(--green);
+  color: var(--darkgrey);
+  transform: scale(1.05);
+  box-shadow: 0px 0px 28px 10px rgba(83, 83, 83, 0.692);
+  transition: 0.2s;
+}
+
+.item-poster {
+  
+}
+
+.item-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: 700;
+  margin-top: 10px;
+  height: 100%;
+}
+
+/* Type of media TV or Movie */
+
+.media-type {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  background-color: var(--faded);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+/* Content at the base of the item card */
+
+.bottom-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  left: 0px;
+  bottom: 0px;
+  flex-direction: column;
+  margin-top: 10px;
+  margin-bottom: -10px;
+  
+}
+.item-date,
+.item-lang,
+.item-vote {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  padding: 5px;
+
+}
+
+.item-vote {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* ///////////// */

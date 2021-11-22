@@ -3,8 +3,8 @@ import './Watchlist.css'
 
 function Watchlist() {
   return (
-    <div className='watch-list'>
-      <h1>Watch List</h1>
+    <div>
+      <h1 className='pageTitle'>Watch List</h1>
     </div>
   )
 }

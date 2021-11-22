@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 :root {
-  --green: rgb(0, 255, 200);
+  --green: #01ffc8;
   --darkgrey: rgb(39, 39, 39);
   --activecol: rgb(2, 2, 2);
   --common-font: 'Montserrat';
@@ -11,6 +11,7 @@
 .nav-main {
   display: flex;
   flex-direction: row;
+  position: fixed;
   justify-content: space-between;
   align-items: center;
   height: 80px;
@@ -77,6 +78,7 @@
 .logo {
   padding: 5px;
   color: #fff;
+  cursor: pointer;
 }
 
 .nav-btns {

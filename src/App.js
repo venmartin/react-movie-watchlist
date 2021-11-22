@@ -1,6 +1,5 @@
 import React from 'react'
 import Navbar from './components/Navbar';
-import Watchlist from './components/Watchlist';
 import Dock from './components/Dock'
 import './App.css'
 
@@ -13,8 +12,11 @@ import Series from './Pages/Series/Series'
 import Search from './Pages/Search/Search'
 import Favorites from './Pages/Favorites/Favorites';
 import About from './Pages/About/About'
+import Watchlist from './Pages/Watchlist/Watchlist'
 
 function App() {
+
+
   return (
     <>
     

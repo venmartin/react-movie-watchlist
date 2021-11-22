@@ -6,19 +6,12 @@ import MovieIcon from '@mui/icons-material/Movie';
 import TvIcon from '@mui/icons-material/Tv';
 import WhatshotIcon from '@mui/icons-material/Whatshot';
 import './Dock.css'
-import { useNavigate } from 'react-router-dom'
-import { useEffect } from 'react';
+import { Link } from 'react-router-dom'
+
 
 export default function SimpleBottomNavigation() {
   const [value, setValue] = React.useState(0);
-
-  // const navigate = useNavigate();
-  //   useEffect(() => {
-  //     if (value===0) navigate.push('./');
-  //     else if(value === 1) navigate.push('/movies');
-  //     else if(value === 2) navigate.push('/series');
-
-  //   }, [value, navigate]);
+  const routes = ["/trending", "/movies", "/series" ]
 
   return (
     <Box className='dock' sx={{
@@ -32,9 +25,9 @@ export default function SimpleBottomNavigation() {
           setValue(newValue);
         }}
       >
-        <BottomNavigationAction label="Trending" icon={<WhatshotIcon />} />
-        <BottomNavigationAction label="Movies" icon={<MovieIcon />} />
-        <BottomNavigationAction label="TV Series" icon={<TvIcon />} />
+        <BottomNavigationAction label="Trending" value={routes[0]} component={Link} to={routes[0]}  icon={<WhatshotIcon />} />
+        <BottomNavigationAction label="Movies" value={routes[1]} component={Link} to={routes[1]} icon={<MovieIcon />} />
+        <BottomNavigationAction label="TV Series" value={routes[2]} component={Link} to={routes[2]} icon={<TvIcon />} />
         {/* <BottomNavigationAction label="" icon={<MoreVertIcon />} /> */}
       </BottomNavigation>
     </Box>
