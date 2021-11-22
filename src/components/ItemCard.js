@@ -12,7 +12,7 @@ const ItemCard = ({
   language
 }) => {
   return (
-    <div className="item-card">
+    <div className="item-card" id={id}>
      <img className='item-poster' src={poster ? `${img_300}/${poster}` : unavailable} alt={title} />
      <span className='item-title'>{title}</span>
      <span className='media-type'>{media_type === "tv" ? "TV Series" : "Movie"}</span>
