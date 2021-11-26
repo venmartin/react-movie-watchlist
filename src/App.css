@@ -5,6 +5,23 @@
    padding-bottom: 80px;
 }
 
+.splash {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+}
+
+.splash-heading {
+  font-size: 0.5rem;
+  color: #01f8c0;
+  padding: 10px;
+  width: 70px;
+  opacity: 70%;
+  cursor: pointer;
+}
+
 .dock {
   position: fixed;
   bottom: 0px;
@@ -35,6 +52,13 @@
 @media (max-width: 700px) {
   .App {
     padding-top: 105px;
+  }
+
+  .splash-heading {
+    font-size: 0.4rem;
+    width: 50px;
+    padding: 5px;
+    border: none;
   }
 
   .pageTitle {

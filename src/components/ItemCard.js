@@ -1,6 +1,8 @@
 import React from 'react'
 import { img_300, unavailable } from '../config/config'
 import './ItemCard.css'
+import LoadingSpinner from './Loading'
+import { useState } from 'react'
 
 const ItemCard = ({
   id,
@@ -11,6 +13,10 @@ const ItemCard = ({
   vote_average,
   language
 }) => {
+
+  const [ loading, setLoading] = useState(false)
+  
+
   return (
     <div className="item-card" id={id}>
      <img className='item-poster' src={poster ? `${img_300}/${poster}` : unavailable} alt={title} />

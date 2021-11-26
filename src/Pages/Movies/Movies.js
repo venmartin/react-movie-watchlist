@@ -6,8 +6,10 @@ import CustomPagination from '../../components/CustomPagination'
 import GenreChips from '../../components/GenreChips'
 import './Movies.css'
 import useGenreID from '../../hooks/useGenreID'
+import LoadingSpinner from '../../components/Loading'
 
 const Movies = () => {
+  const [ loading, setLoading ] = useState(false)
   const [ page, setPage ] = useState(1)
   const [ content, setContent ] = useState([])
   const [ pageNum, setPageNum ] = useState()
@@ -23,7 +25,7 @@ const Movies = () => {
 
       setContent(data.results)
       setPageNum(data.total_pages)
-
+      setLoading(true)
   }
 
   useEffect(() => {
@@ -45,7 +47,7 @@ const Movies = () => {
             />
       <div className='movies'>
         
-        {
+        { loading ? 
           content && content.map((item) => 
           <ItemCard 
             key={item.id}
@@ -58,7 +60,7 @@ const Movies = () => {
             language={item.original_language}
             status={item.status}
              />)
-            
+            : <LoadingSpinner />
         }
       </div>
       <CustomPagination setPage={setPage} page={page} pageNum={pageNum} />
