@@ -9,7 +9,7 @@ import { useState } from 'react';
 import useGenreID from '../hooks/useGenreID';
 
 const GenreMenu = () => {
-    const [expanded, setExpanded] = React.useState(false);
+    const [expanded, setExpanded] = useState(false);
 
     const [ page, setPage] = useState(1)
     const [ content, setContent ] = useState([])
