@@ -11,29 +11,53 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { ToggleButton, ToggleButtonGroup } from '@mui/material';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import ItemCard from '../../components/ItemCard';
+import axios from 'axios';
+import CustomPagination from '../../components/CustomPagination';
 
   
 
 
 const Search = () => {
   const [ type, setType ] = useState()
-  const [ searchVal, setSearchVal] = useState()
   const [ expanded, setExpanded ] = useState(false)
+  const [ searchVal, setSearchVal] = useState()
   
-  // const [ loading, setLoading ] = useState(false)
-  // const [ page, setPage ] = useState(1)
-  // const [ content, setContent ] = useState([])
-  // const [ pageNum, setPageNum ] = useState()
+  const [ content, setContent ] = useState([])
+  const [ pageNum, setPageNum ] = useState()
+  const [ page, setPage ] = useState(1)
+  const [ loading, setLoading ] = useState(false)
     
   //Toggle Button Hooks
     const [alignment, setAlignment] = React.useState('web');
 
+  const fetchSearch = async() => {
+    const { data } = await axios.get(
+        `https://api.themoviedb.org/3/search/
+        ${type}?
+        api_key=${process.env.REACT_APP_API_KEY}
+        &language=en-US
+        &query=${searchVal}
+        &page=${page}
+        &include_adult=false`
+      )
+
+      setContent(data.results)
+      setPageNum(data.total_pages)
+      // setLoading(true)
+  }
+
+    useEffect(() => {
+      window.scroll(0,0)
+      fetchSearch();
+    }, [type, page])
 
 
   // Toggle Func for All / Movies / Series
   const handleMediaType = (event, newAlignment) => {
-    setAlignment(newAlignment);
+    setAlignment(newAlignment)
+    setPage(1);
   };
 
   // Expands the accordion for Advanced Filters
@@ -100,7 +124,27 @@ const Search = () => {
             <SearchIcon onClick={handleSearch}/>
           </button>
         </div>
-        
+        <div className='search-results'>
+        { content && content.map((item) => 
+          <ItemCard 
+            key={item.id}
+            id={item.id} 
+            poster={item.poster_path} 
+            title={item.title || item.name} 
+            date={item.release_date || item.first_air_date}
+            media_type={item.media_type}
+            vote_average={item.vote_average}
+            language={item.original_language}
+            status={item.status}
+             />)
+        }
+        {searchVal &&
+          !content &&
+          (<h2>There is nothing by that title.</h2>)}
+        </div>
+        {pageNum > 1 && (
+        <CustomPagination setPage={setPage} page={page} pageNum={pageNum} />
+        )}
     </div>
   )
 }
