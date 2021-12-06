@@ -20,9 +20,9 @@ import CustomPagination from '../../components/CustomPagination';
 
 
 const Search = () => {
-  const [ type, setType ] = useState()
+  const [ type, setType ] = useState('multi')
   const [ expanded, setExpanded ] = useState(false)
-  const [ searchVal, setSearchVal] = useState()
+  const [ searchVal, setSearchVal] = useState("a")
   
   const [ content, setContent ] = useState([])
   const [ pageNum, setPageNum ] = useState()
@@ -34,15 +34,10 @@ const Search = () => {
 
   const fetchSearch = async() => {
     const { data } = await axios.get(
-        `https://api.themoviedb.org/3/search/
-        ${type}?
-        api_key=${process.env.REACT_APP_API_KEY}
-        &language=en-US
-        &query=${searchVal}
-        &page=${page}
-        &include_adult=false`
+        `https://api.themoviedb.org/3/search/${type}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&query=${searchVal}&page=${page}&include_adult=false`
       )
-
+      
+      
       setContent(data.results)
       setPageNum(data.total_pages)
       // setLoading(true)
@@ -51,26 +46,21 @@ const Search = () => {
     useEffect(() => {
       window.scroll(0,0)
       fetchSearch();
+      
     }, [type, page])
 
 
-  // Toggle Func for All / Movies / Series
-  const handleMediaType = (event, newAlignment) => {
-    setAlignment(newAlignment)
-    setPage(1);
-  };
-
-  // Expands the accordion for Advanced Filters
+    // Expands the accordion for Advanced Filters
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false)
   };
 
   // Handles the text changing within the input field (search box)
-  const handleSearchText = (e) => {
-    setSearchVal(e.target.value)
+  // const handleSearchText = (e) => {
+  //   setSearchVal(e.target.value)
     
-    console.log(searchVal)
-  }
+  //   console.log(searchVal)
+  // }
 
   // Pulls the value from the input field.
   const handleSearch = () => {
@@ -96,16 +86,18 @@ const Search = () => {
             <div>
               <ToggleButtonGroup
                 color="primary"
-                value={alignment}
+                value={type}
                 exclusive
-                onChange={handleMediaType}
+                // Toggle Func for Multi / Movies / TV
+                onChange={(event, newValue) => {
+                  setType(newValue)
+                  setPage(1)
+                  console.log(newValue)
+                }}
               >
-                <ToggleButton 
-                  value="all"
-                  
-                  >All</ToggleButton>
-                <ToggleButton value="movies">Movies</ToggleButton>
-                <ToggleButton value="series">Series</ToggleButton>
+                <ToggleButton value="multi">All</ToggleButton>
+                <ToggleButton value="movie">Movies</ToggleButton>
+                <ToggleButton value="tv">Series</ToggleButton>
               </ToggleButtonGroup>
             </div>
           </AccordionDetails>
@@ -116,15 +108,17 @@ const Search = () => {
             id="filled-basic"
             label="Search"
             variant="filled"
-            onChange={handleSearchText}
+            name='search'
+            // onChange={handleSearchText}
+            onChange={(e) => setSearchVal(e.target.value)}
             style={{
               flex: 1,
              }}/>
           <button className='searchBtn'>
-            <SearchIcon onClick={handleSearch}/>
+            <SearchIcon onClick={fetchSearch}/>
           </button>
         </div>
-        <div className='search-results'>
+        <div className='movies'>
         { content && content.map((item) => 
           <ItemCard 
             key={item.id}
@@ -132,7 +126,7 @@ const Search = () => {
             poster={item.poster_path} 
             title={item.title || item.name} 
             date={item.release_date || item.first_air_date}
-            media_type={item.media_type}
+            media_type={item.media_type || type}
             vote_average={item.vote_average}
             language={item.original_language}
             status={item.status}
