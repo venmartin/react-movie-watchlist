@@ -25,7 +25,7 @@ const Movies = () => {
 
       setContent(data.results)
       setPageNum(data.total_pages)
-      setLoading(true)
+      // setLoading(true)
   }
 
   useEffect(() => {
@@ -47,7 +47,7 @@ const Movies = () => {
             />
       <div className='movies'>
         
-        { loading ? 
+        { 
           content && content.map((item) => 
           <ItemCard 
             key={item.id}
@@ -55,12 +55,12 @@ const Movies = () => {
             poster={item.poster_path} 
             title={item.title || item.name} 
             date={item.release_date || item.first_air_date}
-            media_type={item.media_type}
+            media_type="movie"
             vote_average={item.vote_average}
             language={item.original_language}
             status={item.status}
              />)
-            : <LoadingSpinner />
+        
         }
       </div>
       <CustomPagination setPage={setPage} page={page} pageNum={pageNum} />
