@@ -3,6 +3,7 @@ import { img_300, unavailable } from '../config/config'
 import './ItemCard.css'
 import LoadingSpinner from './Loading'
 import { useState } from 'react'
+import ItemModal from './ItemModal'
 
 const ItemCard = ({
   id,
@@ -18,6 +19,7 @@ const ItemCard = ({
   
 
   return (
+    <ItemModal media_type={media_type} id={id}>
     <div className="item-card" id={id}>
      <img className='item-poster' src={poster ? `${img_300}/${poster}` : unavailable} alt={title} />
      <span className='item-title'>{title}</span>
@@ -28,6 +30,7 @@ const ItemCard = ({
         <span className='item-vote'><span>Rating:</span>{vote_average === 0 ? 'N/A' : vote_average}</span>
       </div>
     </div>
+    </ItemModal>
 
 
   )
