@@ -115,10 +115,11 @@ const Search = () => {
               flex: 1,
              }}/>
           <button className='searchBtn'>
+            {/* <SearchIcon onClick={fetchSearch}/> */}
             <SearchIcon onClick={fetchSearch}/>
           </button>
         </div>
-        <div className='movies'>
+        <div className='search-list'>
         { content && content.map((item) => 
           <ItemCard 
             key={item.id}
