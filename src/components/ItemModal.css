@@ -79,7 +79,8 @@
   }
 
   .content-heading,
-  .content-overview {
+  .content-overview,
+  .modal-tab {
     display: flex;
     position: relative;
     left: -50%;
@@ -106,4 +107,13 @@
     
   }
 
+  .modal-tab {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2px;
+    
+
+  }
 }
+
