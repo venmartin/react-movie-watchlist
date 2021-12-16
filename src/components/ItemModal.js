@@ -1,16 +1,20 @@
 import * as React from 'react';
+
+import Typography from '@mui/material/Typography';
+import ItemCard from './ItemCard';
+import LoadingSpinner from './Loading';
+import { img_500, unavailable, unavailableLandscape } from '../config/config';
+import axios from 'axios';
+import { useState, useEffect } from 'react'
+import AddFav from './AddFav';
 import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import axios from 'axios';
-import ItemCard from './ItemCard';
-import LoadingSpinner from './Loading';
-import { useState, useEffect } from 'react'
-import { img_500, unavailable, unavailableLandscape } from '../config/config';
 import './ItemModal.css'
+import AddWatch from './AddWatch';
+import Trailer from '../Pages/Watchlist/Trailer';
 
 const style = {
   position: 'absolute',
@@ -26,7 +30,7 @@ const style = {
 };
 
 export default function ItemModal({ children, media_type, id }) {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const [ loading, setLoading ] = useState();
@@ -99,30 +103,35 @@ export default function ItemModal({ children, media_type, id }) {
         {/* About Section - Title, Description and Buttons */}
             <div className='about-container'>
               <div className='content-heading'>
-                <span>{content.name || content.title} ({(
+                { content && (
+                  <span>{content.name || content.title} ({(
                   content.first_air_date ||
                   content.release_date ||
                   "N/A"
                 ).substring(0,4)}
                 )
                 </span>
+                )
+                }
               </div>
               
               <div className='content-overview'>
-                <span>
+                { content && (
+                  <span>
                   {content.overview}
                 </span>              
+                )
+                }
               </div>
 
             {/* Buttons Start */}
-            <div>
-              Add To Watch list
+            <div className='modal-tab'>
+              <AddWatch />
+              <AddFav />
             </div>
-            <div>
-              Add To Favourites
-            </div>
-            <div>
-              Trailer
+
+            <div className='modal-tab watch-trailer'>
+              <Trailer />
             </div>
 
           

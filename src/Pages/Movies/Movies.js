@@ -7,6 +7,7 @@ import GenreChips from '../../components/GenreChips'
 import './Movies.css'
 import useGenreID from '../../hooks/useGenreID'
 import LoadingSpinner from '../../components/Loading'
+import AddFav from '../../components/AddFav'
 
 const Movies = () => {
   const [ loading, setLoading ] = useState(false)
@@ -62,6 +63,7 @@ const Movies = () => {
              />)
         
         }
+        <AddFav />
       </div>
       <CustomPagination setPage={setPage} page={page} pageNum={pageNum} />
     </div>

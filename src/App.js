@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from './components/Navbar';
 import Dock from './components/Dock'
 import './App.css'
+import './components/ModalBtnStyle.css'
 
 import CssBaseline from '@mui/material/CssBaseline';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';

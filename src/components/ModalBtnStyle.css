@@ -1,0 +1,21 @@
+.modal-btn-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color:  #272727;
+  border: 1px solid #000;
+  padding: 10px;
+  font-size: 0.8rem;
+  width: 100%;
+  text-transform: uppercase;
+  transition: 0.2s;
+}
+
+.modal-btn-container:hover {
+  background-color: #01ffc8;
+  color: #272727;
+  cursor: pointer;
+}
+
