@@ -36,6 +36,7 @@ export default function ItemModal({ children, media_type, id }) {
   const [ loading, setLoading ] = useState();
   const [ content, setContent ] = useState();
   const [ trailer, setTrailer ] = useState();
+  const [ favorites, setFavorites ] = useState('');
 
 
   const fetchData = async () => {

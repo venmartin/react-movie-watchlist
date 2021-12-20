@@ -143,6 +143,11 @@
 }
 
 
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
 
 @media (max-width: 1080px) {
   .nav-link {

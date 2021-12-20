@@ -7,6 +7,7 @@ import TvIcon from '@mui/icons-material/Tv';
 import WhatshotIcon from '@mui/icons-material/Whatshot';
 import './Dock.css'
 import { Link } from 'react-router-dom'
+import Navbar from "./Navbar"
 
 
 export default function SimpleBottomNavigation() {
