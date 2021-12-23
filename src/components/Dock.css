@@ -1,3 +1,10 @@
 .dock {
   box-shadow: 0px -5px 15px #000;
+  visibility: hidden;
+}
+
+@media (max-width: 700px) {
+  .dock {
+    visibility: visible;
+  }
 }
