@@ -14,7 +14,7 @@ import Fade from '@mui/material/Fade';
 import Button from '@mui/material/Button';
 import './ItemModal.css'
 import AddWatch from './AddWatch';
-import Trailer from '../Pages/Watchlist/Trailer';
+import Trailer from '../Pages/Trailer/Trailer';
 
 const style = {
   position: 'absolute',
