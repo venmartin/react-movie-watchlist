@@ -11,7 +11,7 @@ function Navbar() {
     <>
     <div className='nav-main'>
       {/* <div className='logo' onClick={() => window.scroll(0,0)}> */}
-      <NavLink className={`logo ${(navData) => navData.isActive ? classes.active : ''}`} to='/trending'>
+      <NavLink className={`logo ${(navData) => navData.isActive ? classes.active : ''}`} to='/about'>
         <GiNestedHexagons className='logo-icon rotate linear infinite' />
         <span className='logo-title'>VMDB</span>
       </NavLink>
@@ -22,7 +22,7 @@ function Navbar() {
           <NavLink className={`nav-link ${(navData) => navData.isActive ? classes.active : ''}`} to='/series'>TV SERIES</NavLink>
           {/* <NavLink className={`nav-link ${(navData) => navData.isActive ? classes.active : ''}`} to='/wlist'>WATCH LIST</NavLink>
           <NavLink className={`nav-link ${(navData) => navData.isActive ? classes.active : ''}`} to='/fav'>FAVORITES</NavLink> */}
-          <NavLink className={`nav-link ${(navData) => navData.isActive ? classes.active : ''}`} to='/about'>ABOUT</NavLink>
+          {/* <NavLink className={`nav-link ${(navData) => navData.isActive ? classes.active : ''}`} to='/about'>ABOUT</NavLink> */}
       </div>
     </div>
     </>

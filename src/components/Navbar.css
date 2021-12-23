@@ -152,15 +152,15 @@
 
 @media (max-width: 1080px) {
   .nav-link {
-    width: 120px;
-    font-size: 0.8rem;
+    width: 160px;
+    font-size: 0.9rem;
   }
 }
 
-@media (max-width: 835px) {
+@media (max-width: 865px) {
 
   .nav-link {
-    width: 98px;
+    width: 120px;
   }
 }
 
