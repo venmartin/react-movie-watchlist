@@ -5,7 +5,7 @@ const AddWatch = () => {
   return (
     <div className='modal-btn-container'>
       <RemoveRedEyeIcon />
-      <span className='modal-btn-title'>Add To Watch List</span>
+      <span className='modal-btn-title'>Watch Later</span>
       
     </div>
   )

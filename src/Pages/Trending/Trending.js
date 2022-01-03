@@ -27,7 +27,7 @@ const Trending = () => {
     <div>
       <span className='pageTitle'>Trending</span>
       <div className='trending'>
-        {
+        { loading ? (
           content && content.map((item) => 
           <ItemCard 
             key={item.id}
@@ -39,7 +39,7 @@ const Trending = () => {
             vote_average={item.vote_average}
             language={item.original_language}
 
-             />)
+             />)) : (<LoadingSpinner />)
             
         }
       </div>      

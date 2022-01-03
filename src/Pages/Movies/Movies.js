@@ -11,6 +11,7 @@ import AddFav from '../../components/AddFav'
 
 const Movies = () => {
   const [ loading, setLoading ] = useState(false)
+  const [ favorite, setFavorite] = useState(false)
   const [ page, setPage ] = useState(1)
   const [ content, setContent ] = useState([])
   const [ pageNum, setPageNum ] = useState()
@@ -52,6 +53,7 @@ const Movies = () => {
           content && content.map((item) => 
           <ItemCard 
             key={item.id}
+            favorite={favorite}
             id={item.id} 
             poster={item.poster_path} 
             title={item.title || item.name} 

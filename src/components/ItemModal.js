@@ -21,8 +21,9 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
+  maxWidth: '1300px',
+  // minHeight: '840px',
   width: "90%",
-  // height: "75%",
   bgcolor: 'background.paper',
   border: '2px solid #000',
   boxShadow: 24,
@@ -74,11 +75,12 @@ export default function ItemModal({ children, media_type, id }) {
       >
         <Fade in={open}>
           <Box sx={style}>
-          <div className='content-container'>
+          {/* <div className='content-wrapper'> */}
+           <div className='content-container'>
 
         {/* Poster's Portrait and Landscape           */}
         { content && (
-            <div className='modal-content'>
+            <div className='modal-poster'>
               <img 
                 className='poster-portrait' 
                 alt={ content.name || content.title } 
@@ -89,7 +91,7 @@ export default function ItemModal({ children, media_type, id }) {
           )
         }
           { content && (
-            <div className='modal-content'>
+            <div className='modal-poster'>
               <img 
                 className='poster-landscape' 
                 alt={ content.name || content.title } 
@@ -118,29 +120,34 @@ export default function ItemModal({ children, media_type, id }) {
               
               <div className='content-overview'>
                 { content && (
+                  <div>
+                  <h2>Summary:</h2>
                   <span>
                   {content.overview}
                 </span>              
+                </div>
                 )
                 }
               </div>
 
             {/* Buttons Start */}
-            <div className='modal-tab'>
-              <AddWatch />
-              <AddFav />
-            </div>
+            <div className='btn-container'>
+              <div className='modal-tab'>
+                <AddWatch />
+                <AddFav />
+                <Trailer />
+              </div>
+              
+              
 
-            <div className='modal-tab watch-trailer'>
-              <Trailer />
-            </div>
-
-          
+            
+              </div>
             </div>
           {/* About Container End */}
 
 
-          </div> 
+            </div> 
+          {/* </div> */}
           </Box>
         </Fade>
       </Modal>

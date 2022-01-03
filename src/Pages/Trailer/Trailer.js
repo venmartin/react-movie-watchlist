@@ -5,7 +5,7 @@ const Trailer = () => {
   return (
     <div className='modal-btn-container'>
       <YouTubeIcon />
-      <span>Watch The Trailer</span>
+      <span className='modal-btn-title'>Trailer</span>
     </div>
   )
 }

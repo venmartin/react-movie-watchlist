@@ -1,119 +1,147 @@
+/* .content-wrapper {
+  position: absolute;
+  background-color: #272727;
+  width: 90%;
+  max-width: 1600px;
+  top: 10%;
+  left: 50%;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+  border-radius: 5px;
+  
+} */
+
 .content-container {
   display: flex;
-  flex-direction: column;
-}
-
-.modal-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
   width: 100%;
-  overflow-y: scroll;
-  scrollbar-width: none;
+  
 }
 
-.modal-content::-webkit-scrollbar {
-  display: none;
-}
-
-.poster-portrait {
-  display: flex;
-  width: 100%;
-  max-width: 500px;
-  object-fit: contain;
-  display: none;
-  z-index: 1000;
+.modal-poster {
+  max-width: 750px;
 }
 
 .poster-landscape {
-  width: 100%;
+  display: none;
   height: 100%;
-  object-fit: contain;
+}
+
+.poster-portrait {
+  /* object-fit: contain; */
+  max-width: 800px;
+  padding: 10px 10px 5px 10px;
   
 }
 
+/* Container holding all the data about the movie / series */
+
+.about-container{
+  display: flex;
+  flex-direction: column;
+  margin: 10px 30px 10px 0px;
+  padding-left: 50px;
+
+}
+
+/* Title of Movie / TV Series  */
 .content-heading {
   display: flex;
-  position: relative;
-  left: 0px;
+  font-weight: bolder;
+  font-size: 2rem;
+  text-align: flex-start;
+  padding: 30px 0 30px 0;
   width: 100%;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-  font-size: 22px;
-  padding: 10px;
 
 }
 
+/* Movie / TV Series summary */
 .content-overview {
+  display: flex;
+  width: 100%;
   text-align: justify;
-  padding: 10px;
-  font-size: 1rem;
+  margin: auto;
+  flex-grow: 3;
 }
 
-@media (min-width: 835px) {
-  .poster-portrait {
-    display: flex;
-    object-fit: contain;
-      
-  }
+.btn-container {
+  
+}
 
-  .poster-landscape {
-    display: none;
-    
-    width: 1px;
-    height: 1px;
+.modal-tab {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
 
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #272727;
+
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #01ffc8;
+  
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #01fce8;
+}
+
+
+
+@media (max-width: 1000px) {
+  .content-wrapper {
+    align-items: center;
+    justify-content: center;
   }
 
   .content-container {
-    display: flex;
-    flex-direction: row;
-    /* justify-content: center; */
-  }
-  .modal-content {
-    flex-direction: row;
-    /* justify-content: space-around; */
-    padding: 10px 0;
-  }
-
-  .content-heading,
-  .content-overview,
-  .modal-tab {
-    display: flex;
-    position: relative;
-    left: -50%;
-    width: 150%;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-  
   }
 
-  .content-heading {
-    font-weight: bold;
-    font-size: 30px;
+  .poster-portrait {
+    display: none;
+
+  }
+
+  .poster-landscape {
+    display: flex;
+    max-width: 900px;
+    justify-content: center;
+    align-items: center;
+    object-fit: contain;
+    width: 123%;
+  }
+
+  .modal-poster {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
   }
 
   .about-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    
-    
-  }
-
-  .content-overview {
-    
-  }
-
-  .modal-tab {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
     padding: 2px;
+    margin: 2px;
     
-
   }
+
+  .content-heading {
+    font-size: 1.5rem;
+  }
+
+   .content-overview {
+     max-height: 200px;
+     overflow: scroll;
+     overflow-x: hidden;
+     padding: 15px;
+   }
 }
 

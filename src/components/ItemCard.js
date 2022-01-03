@@ -12,14 +12,15 @@ const ItemCard = ({
   date,
   media_type,
   vote_average,
-  language
+  language,
+  favorite
 }) => {
 
   const [ loading, setLoading] = useState(false)
   
 
   return (
-    <ItemModal media_type={media_type} id={id}>
+    <ItemModal media_type={media_type} id={id} favorite={favorite}>
     <div className="item-card" id={id}>
      <img className='item-poster' src={poster ? `${img_300}/${poster}` : unavailable} alt={title} />
      <span className='item-title'>{title}</span>

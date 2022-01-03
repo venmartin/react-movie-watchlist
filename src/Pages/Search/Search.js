@@ -40,7 +40,7 @@ const Search = () => {
       
       setContent(data.results)
       setPageNum(data.total_pages)
-      // setLoading(true)
+      setLoading(true)
   }
 
     useEffect(() => {
@@ -120,7 +120,7 @@ const Search = () => {
           </button>
         </div>
         <div className='search-list'>
-        { content && content.map((item) => 
+        {loading ? (content && content.map((item) => 
           <ItemCard 
             key={item.id}
             id={item.id} 
@@ -131,7 +131,7 @@ const Search = () => {
             vote_average={item.vote_average}
             language={item.original_language}
             status={item.status}
-             />)
+             />)) : (<LoadingSpinner />)
         }
         {searchVal &&
           !content &&
