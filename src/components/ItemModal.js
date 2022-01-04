@@ -14,6 +14,7 @@ import Fade from '@mui/material/Fade';
 import Button from '@mui/material/Button';
 import './ItemModal.css'
 import Trailer from '../Pages/Trailer/Trailer';
+import CancelIcon from '@mui/icons-material/Cancel';
 
 const style = {
   position: 'absolute',
@@ -74,6 +75,9 @@ export default function ItemModal({ children, media_type, id }) {
       >
         <Fade in={open}>
           <Box sx={style}>
+          <div className='close-btn'>
+            <CancelIcon onClick={handleClose}/>
+          </div>
           {/* <div className='content-wrapper'> */}
            <div className='content-container'>
 

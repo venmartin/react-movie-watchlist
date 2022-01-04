@@ -11,6 +11,27 @@
   
 } */
 
+.close-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  top: 0;  
+  height: 40px;
+  width: 40px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.close-btn svg {
+  width: 30px;
+  height: 30px;
+}
+.close-btn:hover {
+  filter: sepia(29%) saturate(4776%) hue-rotate(83deg) brightness(103%) contrast(104%);
+}
+
 .content-container {
   display: flex;
   width: 100%;
