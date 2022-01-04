@@ -13,7 +13,7 @@ import Series from './Pages/Series/Series'
 import Search from './Pages/Search/Search'
 import Favorites from './Pages/Favorites/Favorites';
 import About from './Pages/About/About'
-import Watchlist from './Pages/Watchlist/Watchlist'
+
 
 
 function App() {
@@ -38,7 +38,6 @@ const tmdb = 'https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_1-5bdc
             <Route path='/movies' element={<Movies/>}></Route>
             <Route path='/series' element={<Series />}></Route>
             <Route path='/search' element={<Search />}></Route>
-            <Route path='/wlist' element={<Watchlist />}></Route>
             <Route path='/fav' element={<Favorites />}></Route>
             <Route path='/about' element={<About />}></Route>
           </Routes>

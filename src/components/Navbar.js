@@ -21,8 +21,8 @@ function Navbar() {
             <NavLink className={`nav-link ${(navData) => navData.isActive ? classes.active : ''}`} to='/trending'>TRENDING</NavLink>
             <NavLink className={`nav-link ${(navData) => navData.isActive ? classes.active : ''}`} to='/movies'>MOVIES</NavLink>
             <NavLink className={`nav-link ${(navData) => navData.isActive ? classes.active : ''}`} to='/series'>TV SERIES</NavLink>
-            {/* <NavLink className={`nav-link ${(navData) => navData.isActive ? classes.active : ''}`} to='/wlist'>WATCH LIST</NavLink>
-            <NavLink className={`nav-link ${(navData) => navData.isActive ? classes.active : ''}`} to='/fav'>FAVORITES</NavLink> */}
+            {/* <NavLink className={`nav-link ${(navData) => navData.isActive ? classes.active : ''}`} to='/wlist'>WATCH LIST</NavLink> */}
+            <NavLink className={`nav-link ${(navData) => navData.isActive ? classes.active : ''}`} to='/fav'>FAVORITES</NavLink>
             {/* <NavLink className={`nav-link ${(navData) => navData.isActive ? classes.active : ''}`} to='/about'>ABOUT</NavLink> */}
         </div>
       </div>

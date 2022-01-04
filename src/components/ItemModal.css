@@ -143,5 +143,9 @@
      overflow-x: hidden;
      padding: 15px;
    }
+
+  .btn-container {
+    margin-top: 30px;
+  }
 }
 

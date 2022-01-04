@@ -13,7 +13,6 @@ import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import Button from '@mui/material/Button';
 import './ItemModal.css'
-import AddWatch from './AddWatch';
 import Trailer from '../Pages/Trailer/Trailer';
 
 const style = {
@@ -133,7 +132,6 @@ export default function ItemModal({ children, media_type, id }) {
             {/* Buttons Start */}
             <div className='btn-container'>
               <div className='modal-tab'>
-                <AddWatch />
                 <AddFav />
                 <Trailer />
               </div>

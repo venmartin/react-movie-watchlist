@@ -2,12 +2,6 @@ import React, { useEffect, useState } from 'react'
 
 
 const Favorites = () => {
-  const 
-  
-  useEffect(() => {
-    
-  }, [])
-  
   
   return (
     <>

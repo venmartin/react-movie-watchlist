@@ -1,5 +1,5 @@
 import React from 'react'
-import { img_300, unavailable } from '../config/config'
+import { img_300, img_500, unavailable, unavailableLandscape } from '../config/config'
 import './ItemCard.css'
 import LoadingSpinner from './Loading'
 import { useState } from 'react'
@@ -13,14 +13,13 @@ const ItemCard = ({
   media_type,
   vote_average,
   language,
-  favorite
 }) => {
 
   const [ loading, setLoading] = useState(false)
   
 
   return (
-    <ItemModal media_type={media_type} id={id} favorite={favorite}>
+    <ItemModal media_type={media_type} id={id}>
     <div className="item-card" id={id}>
      <img className='item-poster' src={poster ? `${img_300}/${poster}` : unavailable} alt={title} />
      <span className='item-title'>{title}</span>

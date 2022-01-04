@@ -6,6 +6,7 @@ import MovieIcon from '@mui/icons-material/Movie';
 import TvIcon from '@mui/icons-material/Tv';
 import WhatshotIcon from '@mui/icons-material/Whatshot';
 import SearchIcon from '@mui/icons-material/Search';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import './Dock.css'
 import { Link } from 'react-router-dom'
 import Navbar from "./Navbar"
@@ -14,7 +15,7 @@ import Navbar from "./Navbar"
 
 export default function SimpleBottomNavigation() {
   const [value, setValue] = React.useState(0);
-  const routes = ["/trending", "/movies", "/series", "/search" ]
+  const routes = ["/trending", "/movies", "/series", "/search", "/fav" ]
 
   return (
     <Box className='dock' sx={{
@@ -32,6 +33,7 @@ export default function SimpleBottomNavigation() {
         <BottomNavigationAction label="Movies" value={routes[1]} component={Link} to={routes[1]} icon={<MovieIcon />} />
         <BottomNavigationAction label="TV Series" value={routes[2]} component={Link} to={routes[2]} icon={<TvIcon />} />
         <BottomNavigationAction label="Search" value={routes[3]} component={Link} to={routes[3]} icon={<SearchIcon />} />
+        <BottomNavigationAction label="Favorites" value={routes[4]} component={Link} to={routes[4]} icon={<FavoriteBorderIcon />} />
         
       </BottomNavigation>
     </Box>
