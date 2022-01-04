@@ -3,7 +3,7 @@
   visibility: hidden;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 830px) {
   .dock {
     visibility: visible;
   }

@@ -163,14 +163,14 @@
   right: 0;
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 1224px) {
   .nav-link {
     width: 160px;
     font-size: 0.9rem;
   }
 }
 
-@media (max-width: 865px) {
+@media (max-width: 1040px) {
 
   .nav-link {
     width: 120px;
@@ -178,7 +178,10 @@
 }
 
 
-@media (max-width: 700px) {
+@media (max-width: 830px) {
+  .nav-wrapper {
+    height: 40px;
+  }
   .nav-main {
     height: 40px;
     flex-direction: column;
