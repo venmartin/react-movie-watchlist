@@ -19,7 +19,7 @@
   position: relative;
   font-family: var(--common-font), sans-serif;
   transition: 0.2s;
-
+  height: 600px;
 }
 
 .item-card:hover {
@@ -95,3 +95,23 @@
     width: 250px;
   }
 }
+
+@media (max-width: 400px) {
+  .item-card {
+    width: 150px;
+    height: 380px;
+  }
+
+  .item-poster {
+    height: 210px;
+  }
+  
+  .item-date,
+  .item-lang,
+  .item-vote {
+    font-size: 0.5rem;
+  }
+
+
+}
+

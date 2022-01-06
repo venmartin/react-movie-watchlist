@@ -208,4 +208,9 @@
   }
 }
 
+@media (max-width: 400px) {
+  .nav-main {
+    margin-bottom: 0px;
+  }
+}
 /* Refer to Dock CSS to alter bottom nav below 700px */

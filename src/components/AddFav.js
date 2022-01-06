@@ -3,20 +3,22 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
 
 const AddFav = ({ media_type, id }) => {
- const { favoriteId, setFavoriteId } = useState()
- const { favoriteMedia, setFavoriteMedia } = useState()
+ const { favoriteId, setFavoriteId } = useState('')
+ const { favoriteMedia, setFavoriteMedia } = useState('')
+ const { favContent, setFavContent } = useState([])
 
  const favItem = {id, media_type}
-
+ 
  const handleAddFavorite = () => {
-  //  const addFavItem = (favItem) => setFavorites(favorites => [...favorites, favItem])
-  localStorage.setItem(id, JSON.stringify({id, media_type}))
-  // localStorage.setItem(media_type, media_type)
     
-   
-   console.log(localStorage)
+  
+  
+    localStorage.setItem('FavList', JSON.stringify(favItem))
+    console.log(localStorage)
     
   }
+
+  
 
   useEffect(() => {
     
@@ -24,6 +26,7 @@ const AddFav = ({ media_type, id }) => {
 
   return (
     <div className='modal-btn-container'
+      // onClick={handleAddFavorite}
       onClick={handleAddFavorite}
         >
       <FavoriteBorderIcon />
