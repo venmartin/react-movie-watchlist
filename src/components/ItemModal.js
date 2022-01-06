@@ -34,23 +34,24 @@ export default function ItemModal({ children, media_type, id }) {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const [ loading, setLoading ] = useState();
+  const [ loading, setLoading ] = useState(false);
   const [ content, setContent ] = useState();
   const [ trailer, setTrailer ] = useState();
-  const [ favorites, setFavorites ] = useState('');
+  const [ favorites, setFavorites ] = useState([]);
 
 
   const fetchData = async () => {
     const { data } = await axios.get(`https://api.themoviedb.org/3/${media_type}/${id}?api_key=${process.env.REACT_APP_API_KEY }&language=en-US`)
   
     setContent(data)
+    // console.log(data)
   }
 
   const fetchTrailer = async () => {
     const { data } = await axios.get(`https://api.themoviedb.org/3/${media_type}/${id}/videos?api_key=${process.env.REACT_APP_API_KEY }&language=en-US`)
   
-    // console.log(data)
     setTrailer(data.results[0]?.key)
+    // console.log(data)
   }
 
 
@@ -58,6 +59,11 @@ export default function ItemModal({ children, media_type, id }) {
     fetchData()
     fetchTrailer()
   }, [])
+
+// Create a function that stores the id of the movies into an array called Favorites.
+  const addToFavArray = (e) => {
+
+  }
 
   return (
     <div>
@@ -136,7 +142,7 @@ export default function ItemModal({ children, media_type, id }) {
             {/* Buttons Start */}
             <div className='btn-container'>
               <div className='modal-tab'>
-                <AddFav />
+                <AddFav id={content && content.id } media_type={media_type}/>
                 <Trailer />
               </div>
               
