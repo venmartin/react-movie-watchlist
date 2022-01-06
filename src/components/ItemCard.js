@@ -1,7 +1,6 @@
 import React from 'react'
 import { img_300, img_500, unavailable, unavailableLandscape } from '../config/config'
 import './ItemCard.css'
-import LoadingSpinner from './Loading'
 import { useState } from 'react'
 import ItemModal from './ItemModal'
 
@@ -14,8 +13,6 @@ const ItemCard = ({
   vote_average,
   language,
 }) => {
-
-  const [ loading, setLoading] = useState(false)
   
 
   return (

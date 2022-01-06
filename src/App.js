@@ -14,7 +14,7 @@ import Search from './Pages/Search/Search'
 import Favorites from './Pages/Favorites/Favorites';
 import About from './Pages/About/About'
 
-
+const favoriteArray = []
 
 function App() {
 
