@@ -61,9 +61,7 @@ export default function ItemModal({ children, media_type, id }) {
   }, [])
 
 // Create a function that stores the id of the movies into an array called Favorites.
-  const addToFavArray = (e) => {
 
-  }
 
   return (
     <div>
