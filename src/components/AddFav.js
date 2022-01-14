@@ -3,17 +3,16 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
 
 const AddFav = ({ media_type, id }) => {
- const { favoriteId, setFavoriteId } = useState('')
- const { favoriteMedia, setFavoriteMedia } = useState('')
- const { favContent, setFavContent } = useState([])
+ const [ favorite, setFavorite ] = useState([])
+ 
 
  const favItem = {id, media_type}
  
- const handleAddFavorite = () => {
+ const handleAddFavorite = (e) => {
     
   
   
-    localStorage.setItem('FavList', JSON.stringify(favItem))
+    localStorage.setItem(id, JSON.stringify(favItem))
     console.log(localStorage)
     
   }
