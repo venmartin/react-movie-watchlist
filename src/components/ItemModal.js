@@ -13,8 +13,8 @@ import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import Button from '@mui/material/Button';
 import './ItemModal.css'
-import Trailer from '../Pages/Trailer/Trailer';
 import CancelIcon from '@mui/icons-material/Cancel';
+import YouTubeIcon from '@mui/icons-material/YouTube';
 
 const style = {
   position: 'absolute',
@@ -51,7 +51,7 @@ export default function ItemModal({ children, media_type, id }) {
     const { data } = await axios.get(`https://api.themoviedb.org/3/${media_type}/${id}/videos?api_key=${process.env.REACT_APP_API_KEY }&language=en-US`)
   
     setTrailer(data.results[0]?.key)
-    // console.log(data)
+    console.log(data)
   }
 
 
@@ -141,7 +141,17 @@ export default function ItemModal({ children, media_type, id }) {
             <div className='btn-container'>
               <div className='modal-tab'>
                 <AddFav id={content && content.id } media_type={media_type} />
-                <Trailer />
+                  <Button className='modal-btn-container'
+                    target={window}
+                    href={`https://www.youtube.com/watch?v=${trailer}`}
+                    variant='outlined'
+                    color='primary'
+                    >
+                    <YouTubeIcon />
+                    <span className='modal-btn-title'>Trailer</span>
+                  </Button>
+                
+
               </div>
               
               
