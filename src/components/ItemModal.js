@@ -140,7 +140,6 @@ export default function ItemModal({ children, media_type, id }) {
             {/* Buttons Start */}
             <div className='btn-container'>
               <div className='modal-tab'>
-                <AddFav id={content && content.id } media_type={media_type} />
                   <Button className='modal-btn-container'
                     target={window}
                     href={`https://www.youtube.com/watch?v=${trailer}`}

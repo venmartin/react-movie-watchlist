@@ -19,7 +19,7 @@
   position: relative;
   font-family: var(--common-font), sans-serif;
   transition: 0.2s;
-  height: 600px;
+  height: 640px;
 }
 
 .item-card:hover {
@@ -28,10 +28,22 @@
   transform: scale(1.05);
   box-shadow: 0px 0px 28px 10px rgba(83, 83, 83, 0.692);
   transition: 0.2s;
+  
+}
+
+.btn-bg-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #272727;
+  height: 70px;
+  padding: 10px;
 }
 
 .item-poster {
   height: 375px;
+  margin-left: -8px;
+  margin-top: -6px;
 }
 
 .item-title {
@@ -41,7 +53,8 @@
   text-align: center;
   font-weight: 700;
   margin-top: 10px;
-  height: 100%;
+  height: 60px;
+
 }
 
 /* Type of media TV or Movie */
@@ -56,6 +69,7 @@
   font-size: 0.8rem;
   text-transform: uppercase;
   color: #fff;
+  
 }
 
 /* Content at the base of the item card */
@@ -70,7 +84,6 @@
   margin-top: 10px;
   padding: 5px;
   border-top: 1px solid rgba(0, 0, 0, 0.521);
- 
 }
 
 .item-date,
