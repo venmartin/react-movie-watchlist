@@ -3,8 +3,10 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import ItemCard from '../../components/ItemCard'
 import CustomPagination from '../../components/CustomPagination'
+import LoadingSpinner from '../../components/Loading'
 
 const Series = () => {
+  const [ loading, setLoading ] = useState(false)
   const [page, setPage] = useState(1)
   const [content, setContent] = useState([])
   const [pageNum, setPageNum ] = useState()
@@ -16,7 +18,7 @@ const Series = () => {
 
       setContent(data.results)
       setPageNum(data.total_pages)
-
+      setLoading(true)
   }
 
   useEffect(() => {
@@ -27,7 +29,7 @@ const Series = () => {
     <div>
       <span className='pageTitle'>Series</span>
       <div className='trending'>
-        {
+        { loading ? 
           content && content.map((item) => 
           <ItemCard 
             key={item.id}
@@ -39,7 +41,7 @@ const Series = () => {
             vote_average={item.vote_average}
             language={item.original_language}
 
-             />)
+             />) : <LoadingSpinner/>
             
         }
       </div>      

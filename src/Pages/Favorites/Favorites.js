@@ -1,12 +1,12 @@
 import React, { useContext } from 'react'
 import FavCard from '../../components/FavCard'
-import ItemCard from '../../components/ItemCard'
 import { GlobalContext } from '../../context/GlobalState'
 
 
+
 const Favorites = () => {
+
   const { favorites } = useContext(GlobalContext)
-  
   
   return (
     <>
@@ -14,8 +14,8 @@ const Favorites = () => {
       <h1 className='pageTitle'>Favorites</h1> 
     </div>
 
-    <div className='movies'>
-            { 
+    <div className='favorites'>
+            { favorites.length > 0 ? (
               favorites.map((item) => 
               <FavCard 
                 key={item.id}
@@ -26,14 +26,12 @@ const Favorites = () => {
                 media_type={item.media_type}
                 vote_average={item.vote_average}
                 language={item.language}
-                />)
+                />)) :
+                <h3>There are no items in your Favorite list</h3>
             
             }
             
           </div>
-          {/* {pageNum > 1 && (
-        <CustomPagination setPage={setPage} page={page} pageNum={pageNum} />
-        )} */}
     </>
   )
 }

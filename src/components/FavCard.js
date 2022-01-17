@@ -3,7 +3,6 @@ import { img_300, img_500, unavailable, unavailableLandscape } from '../config/c
 import './ItemCard.css'
 import ItemModal from './ItemModal'
 import { GlobalContext } from '../context/GlobalState'
-import AddFav from './AddFav'
 import { Button } from '@mui/material'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 

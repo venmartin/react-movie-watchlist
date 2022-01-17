@@ -6,7 +6,7 @@ import CustomPagination from '../../components/CustomPagination'
 import GenreChips from '../../components/GenreChips'
 import useGenreID from '../../hooks/useGenreID'
 import LoadingSpinner from '../../components/Loading'
-import AddFav from '../../components/AddFav'
+
 
 const Movies = () => {
   const [ loading, setLoading ] = useState(false)
@@ -25,7 +25,8 @@ const Movies = () => {
 
       setContent(data.results)
       setPageNum(data.total_pages)
-      // setLoading(true)
+      setLoading(true)
+      
   }
 
   useEffect(() => {
@@ -47,7 +48,7 @@ const Movies = () => {
             />
       <div className='movies'>
         
-        { 
+        { loading ? 
           content && content.map((item) => 
           <ItemCard 
             key={item.id}
@@ -59,7 +60,7 @@ const Movies = () => {
             vote_average={item.vote_average}
             language={item.original_language}
             status={item.status}
-             />)
+             />) : <LoadingSpinner/>
         
         }
       </div>

@@ -1,12 +1,7 @@
 import * as React from 'react';
-
-import Typography from '@mui/material/Typography';
-import ItemCard from './ItemCard';
-import LoadingSpinner from './Loading';
 import { img_500, unavailable, unavailableLandscape } from '../config/config';
 import axios from 'axios';
 import { useState, useEffect } from 'react'
-import AddFav from './AddFav';
 import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
@@ -34,24 +29,21 @@ export default function ItemModal({ children, media_type, id }) {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const [ loading, setLoading ] = useState(false);
   const [ content, setContent ] = useState();
   const [ trailer, setTrailer ] = useState();
-  const [ favorites, setFavorites ] = useState([]);
 
 
   const fetchData = async () => {
     const { data } = await axios.get(`https://api.themoviedb.org/3/${media_type}/${id}?api_key=${process.env.REACT_APP_API_KEY }&language=en-US`)
   
     setContent(data)
-    // console.log(data)
+    
   }
 
   const fetchTrailer = async () => {
     const { data } = await axios.get(`https://api.themoviedb.org/3/${media_type}/${id}/videos?api_key=${process.env.REACT_APP_API_KEY }&language=en-US`)
   
     setTrailer(data.results[0]?.key)
-    console.log(data)
   }
 
 

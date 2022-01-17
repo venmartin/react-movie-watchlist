@@ -1,6 +1,5 @@
 import React from 'react'
 import LoadingSpinner from '../../components/Loading'
-import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import SearchIcon from '@mui/icons-material/Search';
 import './Search.css'
@@ -28,9 +27,6 @@ const Search = () => {
   const [ pageNum, setPageNum ] = useState()
   const [ page, setPage ] = useState(1)
   const [ loading, setLoading ] = useState(false)
-    
-  //Toggle Button Hooks
-    const [alignment, setAlignment] = React.useState('web');
 
   const fetchSearch = async() => {
     const { data } = await axios.get(
@@ -55,19 +51,6 @@ const Search = () => {
     setExpanded(isExpanded ? panel : false)
   };
 
-  // Handles the text changing within the input field (search box)
-  // const handleSearchText = (e) => {
-  //   setSearchVal(e.target.value)
-    
-  //   console.log(searchVal)
-  // }
-
-  // Pulls the value from the input field.
-  const handleSearch = () => {
-    console.log(searchVal)
-  }
-
- 
 
   return (
     <div>
@@ -92,7 +75,6 @@ const Search = () => {
                 onChange={(event, newValue) => {
                   setType(newValue)
                   setPage(1)
-                  console.log(newValue)
                 }}
               >
                 <ToggleButton value="multi">All</ToggleButton>
@@ -115,7 +97,6 @@ const Search = () => {
               flex: 1,
              }}/>
           <button className='searchBtn'>
-            {/* <SearchIcon onClick={fetchSearch}/> */}
             <SearchIcon onClick={fetchSearch}/>
           </button>
         </div>
