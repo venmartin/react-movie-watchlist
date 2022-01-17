@@ -28,7 +28,7 @@ const Trending = () => {
       <span className='pageTitle'>Trending</span>
       <div className='trending'>
         { loading ? (
-          content && content.map((item) => 
+          content && content.map(item => 
           <ItemCard 
             key={item.id}
             id={item.id} 

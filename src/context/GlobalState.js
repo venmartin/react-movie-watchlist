@@ -16,8 +16,22 @@ export const GlobalProvider = (props) => {
   const [ state, dispatch ] = useReducer(AppReducer, initialState)
 
   // actions
-  const addToFavorites = (item) => {
-    dispatch({type: "ADD_ITEM_TO_FAVORITES", payload: item})
+    const addToFavorites = ({
+      id,
+      poster,
+      title,
+      date,
+      media_type,
+      vote_average,
+      language}) => {
+    dispatch({type: "ADD_ITEM_TO_FAVORITES", payload: {
+      id,
+      poster,
+      title,
+      date,
+      media_type,
+      vote_average,
+      language}})
   }
 
   return (
