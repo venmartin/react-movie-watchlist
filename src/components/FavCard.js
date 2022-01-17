@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import { img_300, img_500, unavailable, unavailableLandscape } from '../config/config'
 import './ItemCard.css'
-import ItemModal from './ItemModal'
 import { GlobalContext } from '../context/GlobalState'
 import { Button } from '@mui/material'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
