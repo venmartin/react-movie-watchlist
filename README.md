@@ -1,70 +1,157 @@
-# Getting Started with Create React App
+<!-- PROJECT LOGO -->
+<div align="center">
+  <a href="https://github.com/venmartin">
+    <img src="images/VMDB.jpg" alt="Logo" width="189" height="71">
+  </a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  <h3 align="center">React Movie Database Application</h3>
 
-## Available Scripts
+</div>
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<!-- ABOUT THE PROJECT -->
+# About The Project
 
-### `npm run build`
+## Movies and TV Series
+<img src="images/TV-Series.jpg" width="300" height="219">
+<img src="images/Movies-01.jpg" width="300" height="219">
+<img src="images/Movies-modal.jpg" width="300" height="219">
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<br>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Ability to filter
+<img src="images/Movies-filter-genre.jpg" width="300" height="219">
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<br>
 
-### `npm run eject`
+## Responsive Design
+<img src="images/Mobile-responsive1.jpg" width="133" height="219">
+<img src="images/Mobile-responsive-ipadair.jpg" width="157" height="219">
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<br>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Search your favorite titles
+<img src="images/Search-01.jpg" width="300" height="219">
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<br>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Add and remove from your own favorites list
+<img src="images/Favorites-01.jpg" width="535" height="219">
+<img src="images/Favorites-02.jpg" width="466" height="219">
 
-## Learn More
+<br>
+<br>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### A simple movie database application created with React JS, powered by [The Movie Database](www.themoviedb.org).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The VMDB application allows users to browse through thousands of movies and tv series stored in the TMDB API. 
+Features such as:
 
-### Code Splitting
+* Filter through genre's of movies
+* Search functionality with additional filters to show Movies, TV Series or both.
+* A Favorite list to add / remove your items to and from.
+* Trending which provides the hottest movies rated on a weekly basis.
+* Mobile and tablet friendly.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This was designed to increase my knowledge on React JS and hopefully will help any of you as well!
 
-### Analyzing the Bundle Size
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Built With
 
-### Advanced Configuration
+* [React.js](https://reactjs.org/)
+* [Material UI (Mui)](https://mui.com/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+<!-- GETTING STARTED -->
+## Getting Started
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Installation
+
+_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+
+1. Get a free API Key by signing up at [https://themoviedb.org](https://www.themoviedb.org/signup)
+2. Clone the repo
+   ```sh
+   git clone https://github.com/venmartin/react-movie-watchlist.git
+   ```
+3. Install NPM packages
+   ```sh
+   npm install
+   ```
+4. Enter your API in `.env` / Remember to not have any spaces or " ".
+   ```js
+   REACT_APP_API_KEY=ENTER YOUR API ---- eg. REACT_APP_API_KEY=sfd89890sa97d8909sa0-79s78asd98
+   ```
+5. Run the application locally in development mode.
+   ```
+   npm start
+   ```
+
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE.txt` for more information.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+<!-- CONTACT -->
+## Contact
+
+Adam Martinovic - [LinkedIn](https://www.linkedin.com/in/adam-martinovic-27a321217/)
+
+Project Link: [https://github.com/venmartin/react-movie-watchlist](https://github.com/venmartin/react-movie-watchlist)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
+
+Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
+
+* [The Movie Database](https://themoviedb.org)
+* [Material UI Documentation](https://choosealicense.com)
+* [React Documentation](https://reactjs.org/docs/getting-started.html)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
