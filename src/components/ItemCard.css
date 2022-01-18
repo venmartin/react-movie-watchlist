@@ -112,11 +112,11 @@
 @media (max-width: 400px) {
   .item-card {
     width: 150px;
-    height: 380px;
+    height: 460px;
   }
 
   .item-poster {
-    height: 210px;
+    height: 225px;
   }
   
   .item-date,
