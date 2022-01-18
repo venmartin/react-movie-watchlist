@@ -17,6 +17,7 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
+        <li><a href="#overview">Overview</a></li>
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
@@ -67,6 +68,7 @@
 <br>
 <br>
 
+# Overview
 ### A simple movie database application created with React JS, powered by [The Movie Database](www.themoviedb.org).
 
 The VMDB application allows users to browse through thousands of movies and tv series stored in the TMDB API. 
